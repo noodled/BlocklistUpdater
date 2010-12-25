@@ -1,28 +1,8 @@
 ﻿using System;
 using System.Net;
-using System.Text;
-using System.Collections.Generic;
-using System.Linq;
-using BlocklistUpdater.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BlocklistUpdater.Tests.UnitTests
+namespace BlocklistUpdater.Core
 {
-    [TestClass]
-    public class FileDownloaderTests
-    {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            IFileDownloader downloader = new FileDownloader();
-        }
-    }
-
-    public interface IFileDownloader
-    {
-        TempFile Download(Uri uri);
-    }
-
     public class FileDownloader : IFileDownloader
     {
         private int chunkSize = DefaultChunkSize;

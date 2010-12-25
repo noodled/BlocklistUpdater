@@ -46,8 +46,10 @@
     <Compile Include="BlocklistSource.cs" />
     <Compile Include="BlocklistSourceCollection.cs" />
     <Compile Include="BlocklistUpdaterService.cs" />
+    <Compile Include="FileDownloader.cs" />
     <Compile Include="IBlocklistDownloader.cs" />
     <Compile Include="IBlocklistUpdaterService.cs" />
+    <Compile Include="IFileDownloader.cs" />
     <Compile Include="IListManager.cs" />
     <Compile Include="ITargetApplication.cs" />
     <Compile Include="ListManager.cs" />
