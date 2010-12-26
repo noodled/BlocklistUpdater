@@ -63,6 +63,7 @@
     <Compile Include="TargetApplicationCollection.cs" />
     <Compile Include="TempFile.cs" />
     <Compile Include="UpdateException.cs" />
+    <Compile Include="UTorrentTargetApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

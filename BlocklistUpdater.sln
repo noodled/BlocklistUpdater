@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Tests\UnitTests\UnitTests\UnitTests.csproj", "{0D8740DB-C193-4FB6-92C7-DB0C607031BF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6F74886B-FE4D-43E5-B06D-F773910CBD42}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6F74886B-FE4D-43E5-B06D-F773910CBD42}"
 	ProjectSection(SolutionItems) = preProject
 		Tests\UnitTests\UnitTests\Local.testsettings = Tests\UnitTests\UnitTests\Local.testsettings
 		Tests\UnitTests\UnitTests\TraceAndTestImpact.testsettings = Tests\UnitTests\UnitTests\TraceAndTestImpact.testsettings
@@ -38,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18E111BF-860F-44E0-9B10-833065E6BAA7} = {6F74886B-FE4D-43E5-B06D-F773910CBD42}
+		{0D8740DB-C193-4FB6-92C7-DB0C607031BF} = {6F74886B-FE4D-43E5-B06D-F773910CBD42}
 	EndGlobalSection
 EndGlobal

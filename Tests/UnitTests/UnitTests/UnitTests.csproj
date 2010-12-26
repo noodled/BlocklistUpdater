@@ -59,6 +59,7 @@
     <Compile Include="TargetApplicationCollectionTests.cs" />
     <Compile Include="TargetApplicationTests.cs" />
     <Compile Include="TempFileTests.cs" />
+    <Compile Include="UTorrentTargetApplicationTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Code\Core\Core.csproj">
