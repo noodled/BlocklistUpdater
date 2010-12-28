@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using BlocklistUpdater.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BlocklistUpdater.Tests.UnitTests

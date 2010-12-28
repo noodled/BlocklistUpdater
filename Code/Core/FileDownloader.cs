@@ -1,22 +1,39 @@
 ﻿using System;
 using System.Net;
+using Microsoft.Practices.Prism.Events;
 
 namespace BlocklistUpdater.Core
 {
     public class FileDownloader : IFileDownloader
     {
-        private int chunkSize = DefaultChunkSize;
         const int DefaultChunkSize = 32767;
+
+        internal readonly IEventAggregator EventAggregator;
+        private int chunkSize = DefaultChunkSize;
+        UpdateProgressEvent progressEvent;
+        internal bool IsInitialized;
+
+        public FileDownloader(IEventAggregator eventAggregator)
+        {
+            this.EventAggregator = eventAggregator;
+        }
+        
+        public FileDownloader() : this(new EventAggregator())
+        {
+        }
 
         public TempFile Download(Uri uri)
         {
             if (uri == null) throw new ArgumentNullException("uri");
+            if( !IsInitialized) throw new InvalidOperationException("Downloader was not initialized with Initialize() before calling Download()");
 
             var request = (HttpWebRequest)WebRequest.Create(uri);
 
             request.UseDefaultCredentials = true;
             request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
 
+            progressEvent.Publish(new UpdateState(uri, "Connecting...", 0));
+            
             using (var response = request.GetResponse())
             using (var stream = response.GetResponseStream())
             {
@@ -33,6 +50,12 @@ namespace BlocklistUpdater.Core
                     return temp;
                 }
             }
+        }
+
+        public void Initialize()
+        {
+            progressEvent = EventAggregator.GetEvent<UpdateProgressEvent>();
+            IsInitialized = true;
         }
     }
 }

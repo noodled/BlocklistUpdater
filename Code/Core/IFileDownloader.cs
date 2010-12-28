@@ -2,7 +2,7 @@
 
 namespace BlocklistUpdater.Core
 {
-    public interface IFileDownloader
+    public interface IFileDownloader : ICanInitialize
     {
         TempFile Download(Uri uri);
     }

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
-using BlocklistUpdater.Core;
 
-namespace BlocklistUpdater.Tests.UnitTests
+namespace BlocklistUpdater.Core
 {
     /// <summary>
     /// Support for updating the uTorrent IP Filter.
